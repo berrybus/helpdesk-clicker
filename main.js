@@ -131,7 +131,7 @@ function buyPet() {
 };
 
 function buyStore() {
-  if (cookies >= 2999999) {
+  if (cookies >= 1999999) {
     allOnes = true
     for (var i = 0; i < 10; i++) {
       if (pets[i] == 0)
@@ -140,7 +140,7 @@ function buyStore() {
       }
     }
     if (allOnes) {
-      cookies -= 2999999;
+      cookies -= 1999999;
       document.getElementById("cookies").innerHTML = cookies;
       document.getElementById("win").setAttribute("class", "modal is-active");
     }
