@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>This is a title</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="bulma.css"/>
+  </head>
+  <body>
+    <div class="section">
+      <nav class="level is-mobile">
+        <div class="level-item has-text-centered">
+          <h1 class="title" id="titleName">Help Desk Clicker</h1>
+        </div>
+        <div class="level-right">
+          <div class="level-item">
+            <a class="button is-info" onClick="showPets()">Collection</a>
+          </div>
+          <div class="level-item">
+            <a class="button is-danger" onClick="deleteData()">Delete Data</a>
+          </div>
+        </div>
+      </nav>
+      <hr>
+      <div class="container">
+        <div class="columns">
+          <div class="column">
+            <a class="button is-large is-primary is-fullwidth" onClick="cookieClick(1)">Work</a>
+            <figure class="image is-4by5">
+              <img src="itpro.png">
+            </figure>
+          </div>
+          <div class="column verticalLine">
+            <article class="message">
+              <div class="message-header">
+                <p>News</p>
+              </div>
+              <div class="message-body" id="news">
+                Welcome, young grasshopper!
+              </div>
+            </article>
+            <div class="columns is-multiline">
+              <div class="column is-half">
+                Money: $<span id="cookies">0</span>
+              </div>
+              <div class="column is-half">
+                Tickets: <span id="stock">0</span>
+              </div>
+              <div class="column is-half">
+                End Users: <span id="customers">1</span>
+              </div>
+              <div class="column is-half">
+                Interns: <span id="cursors">0</span>
+              </div>
+              <div class="column is-half">
+                Juniors: <span id="juniors">0</span>
+              </div>
+              <div class="column is-half">
+                Seniors: <span id="seniors">0</span>
+              </div>
+            </div>
+          </div>
+          <div class="column is-one-third verticalLine">
+          
+            <a class="button is-large is-info is-fullwidth tierThree" onClick="buyPet()">
+            Go to animal shelter: $5000</a>
+            <a class="button is-large is-light is-fullwidth expandBuy" onClick="buyExpand()">Grow: $
+            <span id="expandCost">101</span></a>
+            <a class="button is-large is-light is-fullwidth rateBuy tierTwo" onClick="buyRate()">Train: $
+            <span id="rateCost">1000</span></a>
+            <a class="button is-large is-light is-fullwidth cursorBuy" onClick="buyCursor()">Intern: $
+            <span id="cursorCost">10</span></a>
+            <a class="button is-large is-light is-fullwidth juniorBuy tierOne" onClick="buyJunior()">Junior: $
+            <span id="juniorCost">100</span></a>
+            <a class="button is-large is-light is-fullwidth seniorBuy tierTwo" onClick="buySenior()">Senior: $
+            <span id="seniorCost">1000</span></a>
+            <a class="button is-large is-light is-fullwidth storeBuy tierThree" onClick="buyStore()">
+            ???: $1999999</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal" id="displayPets">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Animals Found</p>
+        </header>
+        <section class="modal-card-body">
+          <div class="columns is-multiline">
+            <div class="column is-one-fifth" id="p0">
+              <figure class="image is-64x64">
+                <img src="pet.png">
+              </figure>
+            </div>
+            <div class="column is-one-fifth" id="p1">
+              <figure class="image is-64x64">
+                <img src="pet.png">
+              </figure>
+            </div>
+            <div class="column is-one-fifth" id="p2">
+              <figure class="image is-64x64">
+                <img src="pet.png">
+              </figure>
+            </div>
+            <div class="column is-one-fifth" id="p3">
+              <figure class="image is-64x64">
+                <img src="pet.png">
+              </figure>
+            </div>
+            <div class="column is-one-fifth" id="p4">
+              <figure class="image is-64x64">
+                <img src="pet.png">
+              </figure>
+            </div>
+            <div class="column is-one-fifth" id="p5">
+              <figure class="image is-64x64">
+                <img src="pet.png">
+              </figure>
+            </div>
+            <div class="column is-one-fifth" id="p6">
+              <figure class="image is-64x64">
+                <img src="pet.png">
+              </figure>
+            </div>
+            <div class="column is-one-fifth" id="p7">
+              <figure class="image is-64x64">
+                <img src="pet.png">
+              </figure>
+            </div>
+            <div class="column is-one-fifth" id="p8">
+              <figure class="image is-64x64">
+                <img src="pet.png">
+              </figure>
+            </div>
+            <div class="column is-one-fifth" id="p9">
+              <figure class="image is-64x64">
+                <img src="pet.png">
+              </figure>
+            </div>
+          </div>
+        </section>
+        <footer class="modal-card-foot">
+          <button class="button is-success" onClick="hidePets()">I will keep looking</button>
+        </footer>
+      </div>
+    </div>
+  
+    <div class="modal" id="welcome">
+    <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Welcome to the Help Desk Clicker</p>
+        </header>
+        <section class="modal-card-body">
+          <p>You are an IT pro with a serious love of animals. However, your boss thinks it's about time that they expand their business, so you've been conscripted to help.</p>
+          <br/>
+          <p> Luckily for you, you use the Spiceworks Help Desk. Every ticket you resolve gives some revenue to the company, but you need end users to actually generate those tickets. You also have the option of hiring lackeys to help you generate the income, but be careful! Don't waste all your money on employees. You need clients as well. </p>
+          <br/>
+          <p>Can you raise enough money to save the animals of your dreams?</p>
+          <br/>
+          <p>What is your company's name?</p>
+          <br/>
+          <input class="input" type="text" placeholder="John Smith" id="nameInput">
+        </section>
+        <footer class="modal-card-foot">
+          <button class="button is-success" onClick="startGame()">Okay, let's start</button>
+        </footer>
+      </div>
+    </div>
+
+    <div class="modal" id="win">
+    <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">You win!</p>
+        </header>
+        <section class="modal-card-body">
+          <p>You finally bought that pet shop and have thus fulfilled your childhood dream of being a Pokemon trainer. Congratulations! </p>
+          <br/>
+          <p> Your side job as an IT pro is actually going pretty well, so you figure that you'll keep it around.</p>
+        </section>
+        <footer class="modal-card-foot">
+          <button class="button is-success" onClick="continueGame()">Continue playing aimlessly</button>
+        </footer>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="main.js"></script>
+  </body>
+
+</html>
